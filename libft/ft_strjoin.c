@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_calloc.c                                      .::    .:/ .      .::   */
+/*   ft_strjoin.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 15:21:21 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 15:39:59 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/07 15:45:44 by alavaud      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/07 15:47:16 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_calloc(size_t count, size_t size)
+char    *ft_strjoin(const char *s1, const char *s2)
 {
     size_t allocsz;
-    void *allocblk;
+    char *str;
 
-    allocsz = count * size;
-    allocblk = malloc(allocsz);
-    if (allocblk)
+    allocsz = ft_strlen(s1) + ft_strlen(s2) + 1;
+    str = (char *)malloc(allocsz);
+    if (str)
     {
-        ft_bzero(allocblk, allocsz);
+        ft_strlcpy(str, s1, allocsz);
+        ft_strlcat(str, s2, allocsz);
     }
-    return (allocblk);
+    return (str);
 }

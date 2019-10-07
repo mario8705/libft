@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_calloc.c                                      .::    .:/ .      .::   */
+/*   ft_substr.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 15:21:21 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 15:39:59 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/07 15:42:06 by alavaud      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/07 15:44:01 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_calloc(size_t count, size_t size)
+char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
-    size_t allocsz;
-    void *allocblk;
+    char *str;
+    unsigned int sz;
+    unsigned int i;
 
-    allocsz = count * size;
-    allocblk = malloc(allocsz);
-    if (allocblk)
+    if (start >= len)
+        return (NULL);
+    sz = len - start + 1;
+    str = (char *)malloc(sz);
+    if (str)
     {
-        ft_bzero(allocblk, allocsz);
+        while (i < sz)
+        {
+            str[i] = s[i + start];
+            i++;
+        }
     }
-    return (allocblk);
+    return (str);
 }

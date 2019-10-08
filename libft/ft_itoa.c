@@ -1,60 +1,55 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_atoi.c                                        .::    .:/ .      .::   */
+/*   ft_itoa.c                                        .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/08 12:17:28 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/08 12:54:06 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/08 12:54:46 by alavaud      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/08 13:03:14 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+static char	*ft_strrevdup(const char *s, size_t n)
 {
-	return (c == '\t' ||
-		c == '\n' ||
-		c == '\r' ||
-		c == '\v' ||
-		c == '\f' ||
-		c == '\r' ||
-		c == ' ');
-}
+	char	*str;
+	int		i;
 
-static int	ft_atoi_real(const char *str)
-{
-	int nbr;
-
-	nbr = 0;
-	while (ft_isdigit(*str))
+	str = (char *)malloc(n + 1);
+	if (str)
 	{
-		nbr = nbr * 10 + ('0' - *str);
-		str++;
-	}
-	return (nbr);
-}
-
-int			ft_atoi(const char *str)
-{
-	int sign;
-	int nbr;
-
-	sign = 1;
-	while (ft_isspace(*str))
-	{
-		++str;
-	}
-	if (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
+		i = (int)n - 1;
+		while (i >= 0)
 		{
-			sign = -1;
+			str[i] = s[i];
 		}
-		str++;
+		str[n] = '\0';
 	}
-	nbr = ft_atoi_real(str);
-	return (nbr * sign);
+	return (str);
+}
+
+char		*ft_itoa(int n)
+{
+	char	buf[16];
+	int		i;
+	int		neg;
+
+	i = 0;
+	neg = 0;
+	if (n < 0)
+	{
+		n = -n;
+		neg = 1;
+	}
+	while (n != 0 || i == 0)
+	{
+		buf[i++] = '0' + (n % 10);
+		n /= 10;
+	}
+	if (neg)
+		buf[i++] = '-';
+	return (ft_strrevdup(buf, i));
 }

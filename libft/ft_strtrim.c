@@ -6,58 +6,63 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 15:48:00 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/08 12:26:09 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/08 14:28:19 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-static int is_in_set(const char *set, char c)
+static char		*ft_strndup(const char *s, size_t n)
 {
-    while (*set)
-    {
-        if (*set == c)
-        {
-            return (1);
-        }
-    }
-    return (0);
+	char *dup;
+
+	dup = (char *)malloc(n + 1);
+	if (dup)
+	{
+		ft_strlcpy(dup, s, n + 1);
+	}
+	return (dup);
 }
 
-size_t trim_start_off(const char *s1, const char *set)
+static int		trim_start(const char *s, const char *set)
 {
-    size_t i;
+	int i;
 
-    i = 0;
-    while (s1[i] && is_in_set(set, s1[i]))
-    {
-        i++;
-    }
-    return (i);
+	i = 0;
+	while (ft_strchr(set, s[i]))
+	{
+		i++;
+	}
+	return (i);
 }
 
-size_t trim_end_len(const char *s1, const char *set)
+static int		trim_end(const char *s, const char *set)
 {
-    size_t i;
+	int n;
 
-    i = ft_strlen(s1);
-    if (i > 0)
-    {
-        i--;
-        while (i >= 0)
-        {
-            i--;
-        }
-    }
-    return (i);
+	n = (int)ft_strlen(s);
+	if (n > 0)
+	{
+		n--;
+		while (n >= 0)
+		{
+			if (!ft_strchr(set, s[n]))
+			{
+				break ;
+			}
+			n--;
+		}
+	}
+	return (n);
 }
 
-char    *ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
-    size_t len;
+	const char	*start;
+	int			n;
 
-    len = 0;
+	start = s1 + trim_start(s1, set);
+	n = trim_end(start, set);
+	return (ft_strndup(start, n));
 }
-*/

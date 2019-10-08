@@ -6,13 +6,14 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 15:48:00 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 15:50:53 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/08 12:26:09 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
 static int is_in_set(const char *set, char c)
 {
     while (*set)
@@ -59,3 +60,4 @@ char    *ft_strtrim(char const *s1, char const *set)
 
     len = 0;
 }
+*/

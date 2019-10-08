@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_memmove.c                                     .::    .:/ .      .::   */
+/*   ft_putendl_fd.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 14:14:42 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/08 11:54:57 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/08 12:37:06 by alavaud      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/08 12:40:07 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, void *src, size_t len)
+void    ft_putendl_fd(char *s, int fd)
 {
-    unsigned char *a;
-    unsigned char *b;
-
-    a = (unsigned char *)dst;
-    b = (unsigned char *)src;
-    if (a > b)
-    {
-        while (len--)
-        {
-            *a++ = *b++;
-        }
-    }
-    else
-    {
-        /* TODO */
-    }
-    return (dst);
+    ft_putstr_fd(s, fd);
+    ft_putchar_fd('\r', fd);
 }

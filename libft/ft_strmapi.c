@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_memmove.c                                     .::    .:/ .      .::   */
+/*   ft_strmapi.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 14:14:42 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/08 11:54:57 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/08 12:32:37 by alavaud      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/08 12:34:31 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, void *src, size_t len)
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    unsigned char *a;
-    unsigned char *b;
+    size_t len;
+    unsigned int i;
+    char *mapped;
 
-    a = (unsigned char *)dst;
-    b = (unsigned char *)src;
-    if (a > b)
+    len = ft_strlen(s);
+    mapped = (char *)malloc(len + 1);
+    if (mapped)
     {
-        while (len--)
+        i = 0;
+        while (i < len)
         {
-            *a++ = *b++;
+            mapped[i] = f(i, s[i]);
+            i++;
         }
     }
-    else
-    {
-        /* TODO */
-    }
-    return (dst);
+    return (mapped);
 }

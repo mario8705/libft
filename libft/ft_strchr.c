@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 14:50:38 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 14:52:01 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/08 11:55:25 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,7 +19,7 @@ char    *ft_strchr(const char *s, int c)
     {
         if (*s == (char)c)
         {
-            return (s);
+            return ((char *)s);
         }
         if (*s == 0)
         {

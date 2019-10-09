@@ -2,20 +2,20 @@ CFLAGS=-Wall -Wextra -Werror
 HEADERS=libft.h
 SOURCES=$(wildcard *.c)
 OBJECTS=$(SOURCES:.c=.o)
-OUTPUT=libft.a
+NAME=libft.a
 
-all: $(OUTPUT)
+all: $(NAME)
 
 clean:
 	-rm -rf $(OBJECTS)
 
 fclean: clean
-	-rm -rf $(OUTPUT)
+	-rm -rf $(NAME)
 
 re: clean all
 
-$(OUTPUT): $(OBJECTS)
-	ar rs $(OUTPUT) $(OBJECTS)
+$(NAME): $(OBJECTS)
+	ar rs $(NAME) $(OBJECTS)
 
 %.o: %.c $(HEADERS)
 	$(CC) -c -o $@ $< $(CFLAGS)

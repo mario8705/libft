@@ -6,14 +6,14 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 12:35:51 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/08 12:36:17 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/09 13:22:22 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-    write(fd, &c, 1);
+	write(fd, &c, 1);
 }

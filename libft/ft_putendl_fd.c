@@ -6,15 +6,15 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 12:37:06 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/08 12:40:07 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/09 13:22:33 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-    ft_putstr_fd(s, fd);
-    ft_putchar_fd('\r', fd);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\r', fd);
 }

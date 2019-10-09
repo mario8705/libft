@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 13:03:35 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/08 13:55:43 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/09 15:01:19 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -30,7 +30,7 @@ char	**ft_split(const char *s, char c)
 	tokens = (char **)malloc(ntokens * sizeof(char *));
 	if (tokens)
 	{
-
+	
 	}
 	return (tokens);
 }

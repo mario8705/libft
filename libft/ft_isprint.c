@@ -6,14 +6,14 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 14:42:57 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 14:47:56 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/09 13:22:11 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    return (c >= 32 && c < 127);
+	return (c >= 32 && c < 127);
 }

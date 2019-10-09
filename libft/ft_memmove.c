@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 14:14:42 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/08 11:54:57 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/09 12:59:27 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,21 +15,29 @@
 
 void	*ft_memmove(void *dst, void *src, size_t len)
 {
-    unsigned char *a;
-    unsigned char *b;
+	unsigned char *d;
+	unsigned char *s;
 
-    a = (unsigned char *)dst;
-    b = (unsigned char *)src;
-    if (a > b)
-    {
-        while (len--)
-        {
-            *a++ = *b++;
-        }
-    }
-    else
-    {
-        /* TODO */
-    }
-    return (dst);
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	if (d < s)
+	{
+		while (len--)
+		{
+			*d++ = *s++;
+		}
+	}
+	else
+	{
+		if (len >= 1)
+		{
+			d = (unsigned char *)dst + len - 1;
+			s = (unsigned char *)src + len - 1;
+			while (len--)
+			{
+				*d-- = *s--;
+			}
+		}
+	}
+	return (dst);
 }

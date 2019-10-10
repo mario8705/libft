@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 12:17:28 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/08 12:54:06 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/10 13:25:41 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -31,7 +31,7 @@ static int	ft_atoi_real(const char *str)
 	nbr = 0;
 	while (ft_isdigit(*str))
 	{
-		nbr = nbr * 10 + ('0' - *str);
+		nbr = nbr * 10 + (*str - '0');
 		str++;
 	}
 	return (nbr);

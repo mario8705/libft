@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/09 13:02:03 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/09 13:39:17 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/10 13:35:07 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -34,7 +34,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			}
 			nd++;
 		}
-		if (!needle[nd])
+		if (nd == len || !needle[nd])
 			return ((char *)haystack + hs);
 		hs++;
 	}

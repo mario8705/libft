@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_putendl_fd.c                                  .::    .:/ .      .::   */
+/*   ft_lstiter.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/08 12:37:06 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 12:01:04 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/09 15:23:25 by alavaud      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/10 11:10:12 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

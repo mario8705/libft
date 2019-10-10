@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_putendl_fd.c                                  .::    .:/ .      .::   */
+/*   ft_lstnew.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/08 12:37:06 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 12:01:04 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/09 15:03:08 by alavaud      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/09 15:03:49 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+t_list  *ft_lstnew(void *content)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	t_list *entry;
+
+	entry = (t_list *)malloc(sizeof(t_list));
+	if (entry)
+	{
+		entry->content = content;
+		entry->next = NULL;
+	}
+	return (entry);
 }

@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_putendl_fd.c                                  .::    .:/ .      .::   */
+/*   ft_lstmap_bonus.c                                .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/08 12:37:06 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 12:01:04 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/09 15:24:44 by alavaud      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/10 12:08:01 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(void *))
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	t_list *newlist;
+	t_list *item;
+
+	newlist = NULL;
+	while (lst)
+	{
+		item = f(lst->content);
+	dd
+		lst = lst->next;
+	}
+	return (newlist);
 }

@@ -6,18 +6,18 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 14:49:24 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 14:49:50 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/10 16:55:08 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 'A' && c <= 'Z')
-    {
-        return (c - 'A' + 'a');
-    }
-    return (c);
+	if (c >= 'A' && c <= 'Z')
+	{
+		return (c - 'A' + 'a');
+	}
+	return (c);
 }

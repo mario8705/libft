@@ -6,23 +6,23 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 12:08:16 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 13:58:09 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/10 16:57:48 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
-    char *str;
-    size_t sz;
+	char	*str;
+	size_t	sz;
 
-    sz = ft_strlen(s1);
-    str = (char *)malloc(sz + 1);
-    if (str)
-    {
-        ft_strlcpy(str, s1, sz + 1);
-    }
-    return (str);
+	sz = ft_strlen(s1);
+	str = (char *)malloc(sz + 1);
+	if (str)
+	{
+		ft_strlcpy(str, s1, sz + 1);
+	}
+	return (str);
 }

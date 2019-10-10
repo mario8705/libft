@@ -6,14 +6,14 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 15:42:06 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/09 13:06:11 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/10 16:55:31 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*str;
 	unsigned int	i;

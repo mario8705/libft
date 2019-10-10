@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlcat.c                                     .::    .:/ .      .::   */
+/*   ft_lstclear.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 15:18:36 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 16:57:11 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/09 15:18:43 by alavaud      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/10 13:51:03 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t i;
+	t_list *tmp;
+	t_list *entry;
 
-	i = 0;
-	while (dst[i] && i < size)
+	entry = *lst;
+	while (entry)
 	{
-		i++;
-	}
-	while (*src && i < size)
-	{
-		if (size > 1 && i < size - 1)
+		tmp = entry->next;
+		if (del)
 		{
-			dst[i] = *src++;
+			del(entry->content);
 		}
-		i++;
+		free(entry);
+		entry = tmp;
 	}
-	if (size > 1 && i < size)
-	{
-		dst[i] = 0;
-	}
-	return (i);
+	*lst = NULL;
 }

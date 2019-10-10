@@ -6,26 +6,26 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 14:50:38 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/08 11:55:25 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/10 16:58:01 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    while (1)
-    {
-        if (*s == (char)c)
-        {
-            return ((char *)s);
-        }
-        if (*s == 0)
-        {
-            break ;
-        }
-        s++;
-    }
-    return (NULL);
+	while (1)
+	{
+		if (*s == (char)c)
+		{
+			return ((char *)s);
+		}
+		if (*s == 0)
+		{
+			break ;
+		}
+		s++;
+	}
+	return (NULL);
 }

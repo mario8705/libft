@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 12:32:37 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/09 13:19:25 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/10 16:11:06 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,6 +29,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 			mapped[i] = f(i, s[i]);
 			i++;
 		}
+		mapped[i] = '\0';
 	}
 	return (mapped);
 }

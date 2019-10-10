@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 15:48:00 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/08 14:28:19 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/10 16:14:58 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -30,7 +30,7 @@ static int		trim_start(const char *s, const char *set)
 	int i;
 
 	i = 0;
-	while (ft_strchr(set, s[i]))
+	while (s[i] && ft_strchr(set, s[i]))
 	{
 		i++;
 	}
@@ -42,17 +42,9 @@ static int		trim_end(const char *s, const char *set)
 	int n;
 
 	n = (int)ft_strlen(s);
-	if (n > 0)
+	while (n > 0 && ft_strchr(set, s[n - 1]))
 	{
 		n--;
-		while (n >= 0)
-		{
-			if (!ft_strchr(set, s[n]))
-			{
-				break ;
-			}
-			n--;
-		}
 	}
 	return (n);
 }

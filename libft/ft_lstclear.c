@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/09 15:18:43 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/09 15:23:50 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/10 13:51:03 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,7 +22,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	while (entry)
 	{
 		tmp = entry->next;
-		del(entry->content);
+		if (del)
+		{
+			del(entry->content);
+		}
 		free(entry);
 		entry = tmp;
 	}

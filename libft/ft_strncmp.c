@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 14:55:33 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 16:55:56 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/11 15:13:45 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,9 +20,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (s1[i] != s2[i])
+		if (s1[i] != s2[i] || !s1[i] || !s2[i])
 		{
-			return ((int)s1[i] - (int)s2[i]);
+			return ((int)(unsigned char)s1[i] - (int)(unsigned char)s2[i]);
 		}
 		i++;
 	}

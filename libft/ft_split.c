@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 13:03:35 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 13:15:09 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/10 17:12:01 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -65,7 +65,7 @@ static char	**extract_tokens(const char *s, int c, char **tokens, int *ntokens)
 	return (tokens);
 }
 
-char		**ft_split(const char *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	char	**tokens;
 	int		ntokens;

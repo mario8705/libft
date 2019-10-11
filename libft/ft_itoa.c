@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 12:54:46 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/08 13:03:14 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/11 14:58:44 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,17 +16,22 @@
 static char	*ft_strrevdup(const char *s, size_t n)
 {
 	char	*str;
-	int		i;
+	size_t	i;
 
+	if (n == 0)
+	{
+		return (NULL);
+	}
 	str = (char *)malloc(n + 1);
 	if (str)
 	{
-		i = (int)n - 1;
-		while (i >= 0)
+		i = 0;
+		while (i < n)
 		{
-			str[i] = s[i];
+			str[n - i - 1] = s[i];
+			i++;
 		}
-		str[n] = '\0';
+		str[i] = '\0';
 	}
 	return (str);
 }
@@ -37,6 +42,10 @@ char		*ft_itoa(int n)
 	int		i;
 	int		neg;
 
+	if (n == -2147483648)
+	{
+		return (ft_strdup("-2147483648"));
+	}
 	i = 0;
 	neg = 0;
 	if (n < 0)

@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/09 13:02:03 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 13:35:07 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/11 16:46:49 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t hs;
 	size_t nd;
 
+	if (len == 0)
+		return (NULL);
 	hs = 0;
 	while (1)
 	{
@@ -25,13 +27,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		while (nd < len && needle[nd])
 		{
 			if (!haystack[hs + nd])
-			{
 				return (NULL);
-			}
 			if (haystack[hs + nd] != needle[nd])
-			{
 				break ;
-			}
 			nd++;
 		}
 		if (nd == len || !needle[nd])
@@ -40,3 +38,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
+/*
+#include <stdio.h>
+void main()
+{
+	printf("%s\n", ft_strnstr("lorem ipsum dolor", "dolor", 15));
+}*/

@@ -6,62 +6,67 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 13:03:35 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 17:12:01 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/14 16:10:28 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*extract_token(const char *s, char c, char *buffer, int *length)
+static int	extract_token(const char *source, char sep,
+	char *output, int *length)
 {
 	int i;
-
-	i = 0;
-	while (s[i] && s[i] != c)
-	{
-		if (buffer)
-		{
-			buffer[i] = s[i];
-		}
-		i++;
-	}
-	if (buffer)
-	{
-		buffer[i] = '\0';
-	}
-	if (length)
-	{
-		*length = i;
-	}
-	return (buffer);
-}
-
-static char	**extract_tokens(const char *s, int c, char **tokens, int *ntokens)
-{
-	int i;
-	int j;
-	int toklen;
 	int len;
 
 	i = 0;
-	j = 0;
-	len = ft_strlen(s);
-	while (i <= len)
+	len = 0;
+	while (source[i])
 	{
-		extract_token(s + i, c, NULL, &toklen);
-		if (tokens)
+		if (source[i] == sep)
 		{
-			tokens[j] = (char *)malloc(sizeof(char *) * (toklen + 1));
-			if (!tokens[j])
-				return (NULL);
-			extract_token(s + i, c, tokens[j], &toklen);
+			i++;
+			break ;
 		}
-		i += toklen + 1;
-		j++;
+		if (output)
+		{
+			output[i] = source[i];
+			output[i + 1] = 0;
+		}
+		i++;
+		len++;
+	}
+	if (length)
+		*length = len;
+	return (i);
+}
+
+static char	**extract_tokens(const char *s, char c,
+	char **tokens, int *ntokens)
+{
+	int		ntok;
+	int		toff;
+	int		tlen;
+
+	ntok = 0;
+	tlen = 1;
+	while (*s)
+	{
+		toff = extract_token(s, c, NULL, &tlen);
+		if (tlen > 0)
+		{
+			if (tokens)
+			{
+				if (!(tokens[ntok] = (char *)malloc(tlen + 1)))
+					return (NULL);
+				extract_token(s, c, tokens[ntok], NULL);
+			}
+			ntok++;
+		}
+		s += toff;
 	}
 	if (ntokens)
-		*ntokens = j;
+		*ntokens = ntok;
 	return (tokens);
 }
 

@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 15:42:06 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 16:55:31 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/11 18:29:43 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,6 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		while (i < len && s[start + i])
 		{
 			str[i] = s[start + i];
+			i++;
 		}
 		str[i] = '\0';
 	}

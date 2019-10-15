@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/09 13:02:03 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/14 17:53:17 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/15 16:59:49 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t j;
 
 	i = 0;
-	while (i < len)
+	while (i <= len)
 	{
 		j = 0;
 		while (needle[j] && (i + j) < len)

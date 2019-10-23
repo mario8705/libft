@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 15:48:00 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/15 15:38:33 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/23 16:23:02 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -54,6 +54,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	const char	*start;
 	int			n;
 
+	if (!s1 || !set)
+		return (0);
 	start = s1 + trim_start(s1, set);
 	n = trim_end(start, set);
 	return (ft_strndup(start, n));

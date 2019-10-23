@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 15:06:30 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/11 17:37:36 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/23 16:20:19 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t i;
 
+	if (!dst && !src)
+		return (0);
 	i = 0;
 	while (src[i])
 	{

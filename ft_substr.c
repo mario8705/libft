@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 15:42:06 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/15 17:32:12 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/23 16:21:16 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	i;
 	size_t			l;
 
+	if (!s)
+		return (0);
 	l = ft_strlen(s);
 	if (start >= l)
 		return (ft_strdup(""));

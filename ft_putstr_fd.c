@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 12:36:31 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/09 13:20:28 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/23 16:24:45 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,8 +15,11 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
+	if (s)
 	{
-		write(fd, s++, 1);
+		while (*s)
+		{
+			write(fd, s++, 1);
+		}
 	}
 }

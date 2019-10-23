@@ -21,7 +21,7 @@ fclean: clean
 re: clean all
 
 $(NAME): $(OBJECTS)
-	ar rs $(NAME) $(OBJECTS)
+	ar rcs $(NAME) $(OBJECTS)
 
 bonus: $(OBJECTS) $(OBJECTS_BONUS)
 	ar rs $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
@@ -29,4 +29,4 @@ bonus: $(OBJECTS) $(OBJECTS_BONUS)
 %.o: %.c $(HEADERS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-.PHONY: all clean fclean re $(OUTPUT)
+.PHONY: all clean fclean re

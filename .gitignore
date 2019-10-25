@@ -1,2 +1,5 @@
 libft-unit-test
 Libftest
+*.o
+.vscode
+libft.a

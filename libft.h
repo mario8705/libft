@@ -6,7 +6,7 @@
 /*   By: alavaud <alavaud@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 13:23:15 by alavaud      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/25 19:36:35 by alavaud     ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/13 19:06:07 by alavaud     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -42,6 +42,7 @@ char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+char			*ft_strcpy(char *dst, const char *src);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 char			*ft_strcat(char *s1, const char *s2);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
